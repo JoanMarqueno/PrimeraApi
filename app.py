@@ -10,6 +10,10 @@ def saludar():
         return jsonify({'mensaje': mensaje})
     else:
         return jsonify({'error': 'Nombre no proporcionado'}), 400
+    
+@app.route('/saludo', methods=['GET'])
+def saludar():
+    return '¡Hola! Esta es mi API de saludo.'
 
 if __name__ == '__main__':
     app.run(debug=True)
