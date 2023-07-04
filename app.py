@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-@app.route('/saludo', methods=['POST'])
+@app.route('/saludoPost', methods=['POST'])
 def saludar():
     nombre = request.json.get('nombre')
     if nombre:
@@ -11,7 +11,7 @@ def saludar():
     else:
         return jsonify({'error': 'Nombre no proporcionado'}), 400
     
-@app.route('/saludo', methods=['GET'])
+@app.route('/saludoGet', methods=['GET'])
 def saludar():
     return '¡Hola! Esta es mi API de saludo.'
 
